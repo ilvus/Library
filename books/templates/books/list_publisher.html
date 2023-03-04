@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <div>
+        {% for publisher in publishers %}
+            <div>
+                <span>{{ publisher.name }}</span>
+                <span>{{ publisher.adress }}</span>
+                <hr>
+            </div>
+        {% endfor %}
+        </div>
+{% endblock content %}

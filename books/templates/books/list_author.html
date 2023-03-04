@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <div>
+        {% for author in authors %}
+            <div>
+                <span>{{ author.name }}</span> /// <span>{{ author.mail }}</span>
+                <hr>
+            </div>
+        {% endfor %}
+        </div>
+{% endblock content %}

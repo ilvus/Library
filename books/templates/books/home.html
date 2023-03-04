@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <h1>Home page</h1>
+
+    <div>
+        <a href="{% url 'addbook' %}">Add book</a>
+        <hr>
+        <a href="{% url 'addpublisher' %}">Add publisher</a> /// <a href="{% url 'pub' %}">List of publishers</a>
+        <hr>
+        <a href="{% url 'addauthor' %}">Add author</a> /// <a href="{% url 'aut' %}">List of authors</a>
+        <hr>
+        <div>
+            {% for bk in books %}
+                <div>
+                    <a href="{% url 'edit-book' bk.id %}">Edit</a>
+                    <a href="{% url 'delete-book' bk.id %}">DELETE</a>
+                    <span>{{ bk.id }} -- {{ bk.publisher }} -- <a href="{% url 'book' bk.id %}">{{ bk.title }}</a></span>
+                    <hr>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
