@@ -33,7 +33,7 @@ def book(request, pk):
 def addBook(request):
     form = BooksForm()
     if request.method == 'POST':
-        form = BooksForm(request.POST)
+        form = BooksForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('lib')

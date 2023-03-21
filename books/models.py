@@ -23,7 +23,8 @@ class Books(models.Model):
     title = models.CharField(max_length=100)
     author = models.ForeignKey(Authors, on_delete=models.SET_NULL, null=True)
     publisher = models.ForeignKey(Publisher, on_delete=models.SET_NULL, null=True)
-    date = models.DateField()
+    date = models.DateField(auto_now_add=True)
+    image = models.ImageField(blank=True, null=True, default='img.jpg')
 
     def __str__(self):
         return self.title

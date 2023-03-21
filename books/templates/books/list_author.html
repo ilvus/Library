@@ -1,12 +1,22 @@
 {% extends 'main.html' %}
-
+{% load static %}
 {% block content %}
-    <div>
-        {% for author in authors %}
-            <div>
-                <span>{{ author.name }}</span> /// <span>{{ author.mail }}</span>
-                <hr>
-            </div>
-        {% endfor %}
-        </div>
+    <link rel="stylesheet" href="{% static 'list_author.css' %}">
+  <div>
+    {% for author in authors %}
+      <div class="author-table-container">
+        <table class="author-table">
+          <tr>
+            <th>Name</th>
+            <td>{{ author.name }}</td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td>{{ author.mail }}</td>
+          </tr>
+        </table>
+        <hr>
+      </div>
+    {% endfor %}
+  </div>
 {% endblock content %}

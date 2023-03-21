@@ -1,12 +1,31 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     <title>Navbar</title>
 </head>
+
 <body>
-    <a href="/">
-        <h1>LOGO</h1>
-    </a>
+<div class="toggle-btn">
+        <i class="fas fa-bars"></i>
+    </div>
+<nav class="nav">
+    <a class="nav-link active" aria-current="page" href="/">LIBRARY</a>
+    <a href="{% url 'addbook' %}">Add book</a>
+    <a href="{% url 'addpublisher' %}">Add publisher</a>
+    <a href="{% url 'pub' %}">List of publishers</a>
+    <a href="{% url 'addauthor' %}">Add author</a>
+    <a href="{% url 'aut' %}">List of authors</a>
+    {% if not request.user.is_authenticated %}
+    <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+    {% if request.user.is_authenticated %}
+    <a href="{% url 'logout' %}">Logout</a>
+    {% endif %}
+</nav>
+
 </body>
+
 </html>

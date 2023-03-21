@@ -1,13 +1,24 @@
-{% extends 'main.html' %}
 
+{% extends 'main.html' %}
+{% load static %}
 {% block content %}
-    <div>
-        {% for publisher in publishers %}
-            <div>
-                <span>{{ publisher.name }}</span>
-                <span>{{ publisher.adress }}</span>
-                <hr>
-            </div>
-        {% endfor %}
-        </div>
+    <link rel="stylesheet" href="{% static 'list_author.css' %}">
+  <div>
+    {% for publisher in publishers %}
+      <div class="author-table-container">
+        <table class="author-table">
+          <tr>
+            <th>Name</th>
+            <td>{{ publisher.name }}</td>
+          </tr>
+          <tr>
+            <th>Address</th>
+            <td>{{ publisher.adress }}</td>
+          </tr>
+        </table>
+        <hr>
+      </div>
+    {% endfor %}
+  </div>
 {% endblock content %}
+

@@ -1,0 +1,138 @@
+/* Navbar styles */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f1f1f1;
+  height: 50px;
+  padding: 0 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px; /* Add margin at the bottom */
+}
+
+/* Active link style */
+.nav-link.active {
+  color: #fff;
+  background-color: #007bff;
+}
+
+/* Hover link style */
+.nav-link:hover {
+  color: #007bff;
+}
+
+/* Disabled link style */
+.nav-link.disabled {
+  color: #aaa;
+}
+
+/* Link styles */
+.nav-link {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Link focus style */
+.nav-link:focus {
+  outline: none;
+}
+
+/* Link active style */
+.nav-link:active {
+  color: #fff;
+  background-color: #000000; /* Change background color to black */
+}
+
+/* Toggle button styles */
+.toggle-btn {
+  display: none;
+  cursor: pointer;
+}
+
+.toggle-btn i {
+  font-size: 24px;
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 768px) {
+  /* Hide all links except the toggle button */
+  .nav-link:not(:first-child) {
+    display: none;
+  }
+
+  /* Show the toggle button */
+  .toggle-btn {
+    display: block;
+  }
+
+  /* Set the navbar to a vertical layout */
+  .nav {
+    flex-direction: column;
+    height: auto;
+  }
+
+  /* Set the links to take up the full width of the navbar */
+  .nav-link {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  /* Add a border between the links */
+  .nav-link:not(:first-child) {
+    border-top: 1px solid #ccc;
+  }
+
+  /* Add a padding to the navbar */
+  .nav {
+    padding: 10px;
+    margin-bottom: 0; /* Reset margin at the bottom */
+  }
+}
+
+/* Book page styles */
+
+/* Container styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Image styles */
+.container img {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+/* Title styles */
+.container h1:first-of-type {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Author, Publisher, and Date styles */
+.container h1:not(:first-of-type) {
+  font-size: 24px;
+  margin-bottom: 5px;
+  color: #666;
+}
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 768px) {
+  .container img {
+    width: 100%;
+    height: auto;
+  }
+
+  .container h1 {
+    font-size: 24px;
+  }
+}
+
